@@ -26,7 +26,7 @@ class Text extends Component {
                         className="featured_number"
                         style ={{
                             opacity,
-                            transform: `translate(260px, 170px) rotateY(${rotate}deg)`
+                            transform: `translate(253px, 121px) rotateY(${rotate}deg)`
                         }}
                     >
                         3
@@ -41,13 +41,13 @@ class Text extends Component {
             show={true}
             start={{
                 opacity:0,
-                x: 503,
-                y: 395
+                x: 550,
+                y: 345
             }}
             enter = {{
                 opacity: [1],
-                x: [273],
-                y: [395],
+                x: [264],
+                y: [345],
                 timing: {duration: 500, ease: easePolyOut}
             }}
         >
@@ -72,13 +72,13 @@ class Text extends Component {
             show={true}
             start={{
                 opacity:0,
-                x: 503,
-                y: 510
+                x: 456,
+                y: 456
             }}
             enter = {{
                 opacity: [1],
-                x: [273],
-                y: [510],
+                x: [264],
+                y: [456],
                 timing: {delay:300, duration: 500, ease: easePolyOut}
             }}
         >
@@ -118,7 +118,7 @@ class Text extends Component {
                         style ={{
                             opacity,
                             background: `url(${FeaturedPlayer})`,
-                            transform: `translate(550px, 201px)`
+                            transform: `translate(550px, 111px)`
                         }}
                     >
                         

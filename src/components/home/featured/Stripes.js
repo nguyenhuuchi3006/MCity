@@ -7,9 +7,9 @@ class Stripes extends Component {
 
     state = {
         stripes: [
-            { background: '#98c5e9', left: 120, rotate: 25, top: -260, delay: 0},
-            { background: '#ffffff', left: 360, rotate: 25, top: -397, delay: 200},
-            { background: '#98c5e9', left: 600, rotate: 25, top: -498, delay: 400}
+            { background: '#98c5e9', left: 94, rotate: 25, top: -260, delay: 0},
+            { background: '#ffffff', left: 350, rotate: 25, top: -397, delay: 200},
+            { background: '#98c5e9', left: 607, rotate: 25, top: -498, delay: 400}
         ]
     }
 
