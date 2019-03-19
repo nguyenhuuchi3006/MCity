@@ -42,12 +42,12 @@ class Text extends Component {
             start={{
                 opacity:0,
                 x: 503,
-                y: 450
+                y: 395
             }}
             enter = {{
                 opacity: [1],
                 x: [273],
-                y: [450],
+                y: [395],
                 timing: {duration: 500, ease: easePolyOut}
             }}
         >
@@ -73,12 +73,12 @@ class Text extends Component {
             start={{
                 opacity:0,
                 x: 503,
-                y: 586
+                y: 510
             }}
             enter = {{
                 opacity: [1],
                 x: [273],
-                y: [586],
+                y: [510],
                 timing: {delay:300, duration: 500, ease: easePolyOut}
             }}
         >

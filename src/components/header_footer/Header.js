@@ -16,16 +16,16 @@ class Header extends Component {
                 style = {{
                     backgroundColor: '#98c5e9',
                     boxShadow: 'none',
-                    padding: '10px 0',
+                    padding: '5px 0',
                     borderBottom: '2px solid #00285e'
                 }}
             >
-                <Toolbar style = {{display: 'flex'}}>
+                <Toolbar style = {{display: 'flex', minHeight: '30px'}}>
                     <div style = {{flexGrow: 1}}>
                         <div className="header_logo">
                             <CityLogo
-                                width = '70px'
-                                height = '70px'
+                                width = '50px'
+                                height = '50px'
                                 link = 'true'
                                 linkTo = '/'
                             />
