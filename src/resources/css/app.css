@@ -95,19 +95,19 @@ button {
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     color: #cecece;
     text-align: center;
-  }
+}
   ::-moz-placeholder { /* Firefox 19+ */
     color: #cecece;
     text-align: center;
-  }
+}
   :-ms-input-placeholder { /* IE 10+ */
     color: #cecece;
     text-align: center;
-  }
+}
   :-moz-placeholder { /* Firefox 18- */
     color: #cecece;
     text-align: center;
-  }
+}
 
 
 .image_upload_container {

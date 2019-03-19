@@ -4,8 +4,10 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^3.9.2",
+    "d3-ease": "^1.0.5",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
+    "react-move": "^5.2.1",
     "react-router-dom": "^4.4.0",
     "react-scripts": "2.1.8"
   },
