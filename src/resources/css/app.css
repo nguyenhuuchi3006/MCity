@@ -344,9 +344,9 @@ footer .footer_discl {
 }
 
 .match_filters {
-     display: flex;
-     border-bottom: 1px solid #01285e;
-     background: #dff1ff;
+    display: flex;
+    border-bottom: 1px solid #01285e;
+    background: #dff1ff;
 }
 .match_filters .tag {
     font-weight: 300;
