@@ -4,7 +4,7 @@ const MatchesBlock = ({match}) => {
     return (
         <div className="match_block">
             <div className="match_date">
-                {match.final ? match.date : `Match not played yet: ${match.date}`}
+                {match.final !== 'No' ? match.date : `Match not played yet: ${match.date}`}
             </div>
 
             <div className="match_wrapper">
@@ -24,7 +24,7 @@ const MatchesBlock = ({match}) => {
                         <div className="team_name">{match.away}</div>
                     </div>
                     <div className="right">
-                        {match.final ? match.resultAway: '-'}
+                        {match.final !== 'No' ? match.resultAway: '-'}
                     </div>
                 </div>
             </div>
