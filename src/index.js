@@ -7,6 +7,8 @@ import { BrowserRouter } from 'react-router-dom';
 
 import './resources/css/app.css';
 
+import './firebase';
+
 const App = ()=>{
     return (
         <BrowserRouter>
