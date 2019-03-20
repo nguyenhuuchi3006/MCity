@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 
-const Tag = (props) => {
+export const Tag = (props) => {
 
     const template = <div
         
@@ -30,5 +30,14 @@ const Tag = (props) => {
 
 };
 
-
-export default Tag;
+//thêm id cho từng match
+export const firebaseLooper = (snapshot) => {
+    const data = [];
+    snapshot.forEach((childSnapshot) => {
+        data.push({
+            ...childSnapshot.val(),
+            id: childSnapshot.key
+        })
+    });
+    return data;
+}
