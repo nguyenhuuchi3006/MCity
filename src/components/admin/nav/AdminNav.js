@@ -28,6 +28,7 @@ const AdminNav = () => {
         ))
     )
     
+    
     const logoutHandlers = () => {
         firebase.auth().signOut().then(()=> {
             console.log('ok');
