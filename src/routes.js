@@ -9,11 +9,12 @@ import SignIn from './components/signin';
 import Dashboard from './components/admin/Dashboard';
 
 import PrivateRoute from './components/authRoutes/PrivateRoute';
+import PublicRoute from './components/authRoutes/PublicRoute';
 
 const Routes = (props) => {
 
 
-  console.log(props);
+
   
 
   return (
@@ -21,10 +22,11 @@ const Routes = (props) => {
       <Switch>
 
         <PrivateRoute {...props} path="/dashboard" exact component={Dashboard}/>
+        
+        <PublicRoute {...props} path="/sign_in" restricted={true} exact component={SignIn}/>
+        <PublicRoute {...props} path="/" restricted={false} exact component={Home}/>
 
         
-        <Route path="/sign_in" exact component={SignIn} />
-        <Route path="/" exact component={Home} />
         
       </Switch>
     </Layout>
