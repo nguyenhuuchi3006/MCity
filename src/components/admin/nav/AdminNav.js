@@ -8,7 +8,7 @@ import ListItem from '@material-ui/core/ListItem'
 const AdminNav = () => {
 
     const links = [
-        {title: 'Matches', linkTo: '/admid_matches'},
+        {title: 'Matches', linkTo: '/admin_matches'},
         {title: 'Add Match', linkTo: '/admid_matches/edit_match'},
         {title: 'Players', linkTo: '/admid_players'},
         {title: 'Add Player', linkTo: '/admid_players/add_player'}    
