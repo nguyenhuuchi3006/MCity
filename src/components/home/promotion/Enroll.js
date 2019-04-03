@@ -33,6 +33,9 @@ class Enroll extends Component {
     updateForm(element){
         const newFormData = {...this.state.formdata};
         const newElement = {...newFormData[element.id]};
+
+        console.log(element);
+        
         
         newElement.value = element.event.target.value;
         
@@ -115,31 +118,33 @@ class Enroll extends Component {
         return (
             <Fade>
                 <div className="enroll_wrapper">
-                    <form onSubmit={(event)=> this.submitForm(event)}></form>
-                
-                    <div className="enroll_title">
-                        enter your email
-                    </div>
-                    <div className="enroll_input">
-                        <FormField 
-                            id={'email'}
-                            formdata={ this.state.formdata.email}
-                            change={(element)=>this.updateForm(element)}
-                        
-                        />
-
-                        {this.state.formError? 
-                            <div className="error_label">Something is wrong, try again.</div> 
-                            : null
-                        }
-
-                        <div className="success_label">{this.state.formSuccess}</div>
-                        <button onClick={(event)=>this.submitForm(event)}>Enroll</button>
-
-                        <div className="enroll_discl">
-                            Lorem ipsum dolor sit soluta sed nihil quas explicabo commodi dolor vel aliquam doloremque voluptatum?
+                    <form onSubmit={(event)=> this.submitForm(event)}>
+                        <div className="enroll_title">
+                            enter your email
                         </div>
-                    </div>
+                        <div className="enroll_input">
+                            <FormField 
+                                id={'email'}
+                                formdata={ this.state.formdata.email}
+                                change={(element)=>this.updateForm(element)}
+                            
+                            />
+
+                            {this.state.formError? 
+                                <div className="error_label">Something is wrong, try again.</div> 
+                                : null
+                            }
+
+                            <div className="success_label">{this.state.formSuccess}</div>
+                            <button onClick={(event)=>this.submitForm(event)}>Enroll</button>
+
+                            <div className="enroll_discl">
+                                Lorem ipsum dolor sit soluta sed nihil quas explicabo commodi dolor vel aliquam doloremque voluptatum?
+                            </div>
+                        </div>
+                    </form>
+                
+                    
                 </div>
             </Fade>
         );

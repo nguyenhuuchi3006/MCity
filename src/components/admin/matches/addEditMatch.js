@@ -243,6 +243,8 @@ class AddEditMatch extends Component {
                 
                 firebaseMatches.push(dataToSubmit).then(()=>{
                     this.props.history.push('/admin_matches');
+                    console.log(this.props);
+                    
 
                 }).catch(e=>{
                     this.setState({formError: true})

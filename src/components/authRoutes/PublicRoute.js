@@ -7,6 +7,7 @@ const PublicRoute = ({
     component: Comp,
     ...rest
 }) => {
+    
     return <Route {...rest} component={(props)=> (
         rest.restricted ?
             (
@@ -14,9 +15,11 @@ const PublicRoute = ({
                     <Redirect to="/dashboard" />
                     :
                 <Comp {...props} user={user} />
+                
             )
             :
         <Comp {...props} user={user} />
+        
     )}/>
 };
 
