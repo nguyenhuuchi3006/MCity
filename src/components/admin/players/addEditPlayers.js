@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import AdminLayout from '../../../Hoc/AdminLayout';
 import FormField from '../../ui/formFields';
 import { validate } from '../../ui/misc';
+import Fileuploader from '../../ui/fileuploader';
 
 import { firebasePlayers, firebaseDB, firebase } from '../../../firebase';
 
@@ -79,15 +80,28 @@ class AddEditPlayers extends Component {
                 valid: false,
                 validationMessage: '',
                 showlabel: true
+            },
+            image: {
+                element: 'image',
+                value: '',
+                validation:{
+                    require: true
+                },
+                valid: false
             }
         }
     }
 
-    updateForm(element){
+    updateForm(element,content=''){
         const newFormData = {...this.state.formdata};
         const newElement = {...newFormData[element.id]};
         
-        newElement.value = element.event.target.value;
+        if(content==='') {
+            newElement.value = element.event.target.value;
+        } else {
+            newElement.value= content;
+        }
+        
         
         let validData = validate(newElement);
         newElement.valid = validData[0];
@@ -117,26 +131,16 @@ class AddEditPlayers extends Component {
         
         if(formIsValid) {
     
-            if(this.state.formType === 'Edit Match'){
-                firebaseDB.ref(`matches/${this.state.matchId}`)
-                .update(dataToSubmit).then(()=>{
-                    this.successForm('Updated correctly');
-                }).catch(e=>{
-                    this.setState({formError: true})
-                })
-            } else {
-                
+            if(this.state.formType==='Edit player'){
+
+            } else {            // neu add player ms
                 firebasePlayers.push(dataToSubmit).then(()=>{
-                    this.props.history.push('/admin_matches');
-                    console.log(this.props);
-                    
-
-                }).catch(e=>{
+                    this.props.history.push('/admin_players')
+                }).catch(e => {
                     this.setState({formError: true})
                 })
-
-
             }
+            
             
 
         } else {
@@ -184,6 +188,21 @@ class AddEditPlayers extends Component {
         
     }
 
+
+    resetImage = () => {
+        const newFormdata = {...this.state.formdata};
+        newFormdata['image'].value = '';
+        newFormdata['image'].valid = false;
+        this.setState({
+            defaultImg: '',
+            formdata: newFormdata
+        })
+    }
+
+    storeFilename = (filename) => {
+        this.updateForm({id: 'image'},filename)
+    }
+
     render() {
         return (
             <AdminLayout>
@@ -193,6 +212,15 @@ class AddEditPlayers extends Component {
                     </h2>
                     <div>
                         <form onSubmit={(event)=>{this.submitForm(event)}}>
+
+                            <Fileuploader 
+                                dir='players'                       //store to directory player in storage firebase
+                                tag={"Player image"}
+                                defaultImg={this.state.defaultImg}
+                                defaultImgName={this.state.formdata.image.value}  //để render cái ảnh có rồi (không cần upload)
+                                resetImage={()=>this.resetImage()}      //hàm này remove ảnh và về lại import ảnh
+                                filename={(filename)=>this.storeFilename(filename)}     //de luu ten file vao value
+                            />
 
                             <FormField 
                                 id={'name'}
