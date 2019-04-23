@@ -205,7 +205,6 @@ class AddEditPlayers extends Component {
     componentDidMount(){
         const playerId = this.props.match.params.id;
 
-
         if(!playerId) {
             this.setState({
                 formType: 'Add Player'

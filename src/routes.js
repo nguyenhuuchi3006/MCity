@@ -7,6 +7,8 @@ import { Switch } from 'react-router-dom';
 import Home from './components/home';
 import SignIn from './components/signin';
 import Dashboard from './components/admin/Dashboard';
+import TheTeam from './components/theTeam'
+
 import AdminMatches from './components/admin/matches';
 import AddEditMatch from './components/admin/matches/addEditMatch';
 import AdminPlayers from './components/admin/players/';
@@ -36,6 +38,7 @@ const Routes = (props) => {
         <PrivateRoute {...props} path="/admin_matches" exact component={AdminMatches}/>
         <PrivateRoute {...props} path="/dashboard" exact component={Dashboard}/>
         
+        <PublicRoute {...props} path="/the_team" restricted={false} exact component={TheTeam}/>
         <PublicRoute {...props} path="/sign_in" restricted={true} exact component={SignIn}/>
         <PublicRoute {...props} path="/" restricted={false} exact component={Home}/>
 
