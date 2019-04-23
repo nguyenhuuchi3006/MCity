@@ -39,7 +39,6 @@ class Fileuploader extends Component {
     }
     handleUploadSuccess = (filename) => {           // firebase se tra ve filename cho ta
         
-        
         this.setState({
             name: filename,
             isUploading : false
